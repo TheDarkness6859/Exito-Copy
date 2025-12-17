@@ -1,0 +1,454 @@
+:root{
+    --Main-Color: #ffe800;
+    --Main-Font: "Poppins", Helvetica, sans-serif;
+    --Interaction-Background: #fff;
+    --Grey-Color: #f4f4f4;
+    --Grey2-Color: #676767;
+    --Black-Color: #000;
+    --Grey3-Color: #999;
+    --Grey4-Color: #cccccc;
+    --color-btn-primary: #f78524;
+    --color-btn-primary-dark: #e2681c;
+}
+
+body{
+    font-family: var(--Main-Font);
+    margin: 0;
+    min-width: 100vh;
+}
+
+main{
+    margin-top: 107px;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+header{
+    background-color: var(--Main-Color);
+    top: 0;
+    width: 100%;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    flex-direction: column;
+}
+
+.acces{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 0 20px;
+    gap: 2rem;
+    box-sizing: border-box;
+
+}
+
+.logo, .Nav-Menu{
+    width: 70px;
+}
+
+.Button{
+    cursor: pointer;
+    font-weight: bold;    
+    font-size: 16px;
+}
+
+.Find{
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    height: 40px;
+    overflow: hidden;
+    width: 465px;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.Find input[type="text"]{
+    flex-grow: 1;
+    height: 100%;
+    padding: 0 15px;
+    font-size: 16px;
+    outline: none;
+    border: 0;
+    min-width: 150px;
+}
+
+.Find button{
+    height: 100%;
+    width: 50px;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Find button img{
+    width: 20px;
+    height: 20px;
+    display: block;
+    color: var(--Interaction-Background);
+}
+
+.Send{
+    display: flex;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.Send p{
+    width: 120px;
+}
+
+.Button-2{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.Send .Button-2 img{
+    width: 20px;
+    height: 20px;
+}
+
+.Orders-Box{
+    z-index: 1000;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Orders-Content{
+    width: 822px;
+    background-color: var(--Interaction-Background);
+    height: 374px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Orders-Content .Order-Header{
+    padding: 0 20px;
+    display: flex;
+    background-color: var(--Grey-Color);
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#Order-Close{
+    color:var(--Grey2-Color);
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Delivery-Zone{
+    margin-top: 26px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    width: 450px;
+    height: 63px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.Delivery-Zone .Pick{
+    background-color: var(--Grey-Color);
+    color:  var(--Grey3-Color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 40px;
+    border: 1px solid var(--Grey3-Color);
+    padding: 10px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.Delivery-Zone .Delivery{
+    justify-content: flex-start;
+    width: 50%;
+    margin-left: -225px;
+    height: 100%;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    color: var(--Interaction-Background);
+    background-color: var(--Black-Color);
+    border-radius: 40px;
+    z-index: 2;
+    position: absolute;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.Delivery-Zone .Pick div{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    align-items: center;
+    margin-right: 30px;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.Delivery-Zone .Delivery div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 10px;
+    font-size: 14px;
+    align-items: center;
+    font-weight: 700;
+}
+
+.Delivery-Zone svg{
+    width: 25px;
+    height: 25px;
+}
+
+#Orders:checked ~ .Orders-Box{
+    visibility: visible;
+    opacity: 1;
+}
+
+.Inputs{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-weight: 700;
+    box-sizing: border-box;
+}
+
+.Inputs fieldset{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.Inputs legend{
+    box-sizing: border-box;
+    padding: 15px 0;
+    width: 100%;
+    font-size: 16px;
+}
+
+.Form{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.Form > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.Form select{
+    width: 377px;
+    height: 41px;
+    border-radius: 10px;
+    border: 1px solid var(--Grey3-Color);
+    background-color: transparent;
+    font-weight: bold;
+    color: var(--Grey3-Color);
+    font-size: 15px;
+}
+
+.Confirm{
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    width: 350px;
+    opacity: 0.4;
+    color: var(--Interaction-Background);
+    height: 45px;
+    margin-top: 28px;
+    background-color: var(--color-btn-primary);
+    transition: all 0.2s ease-in-out;
+}
+
+.Confirm:hover{
+    opacity: 1;
+}
+
+#Store{
+    background-color: var(--Grey-Color);
+    transition: all 0.2s ease-in-out;
+}
+
+#Store:hover{
+    background-color: transparent;
+}
+
+.Contact-Zone{
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.Contact-Zone > div{
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    align-items: center;     
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.Contact-Zone div a{
+    text-decoration: none;
+    color: var(--Black-Color);
+}
+
+.Contact-Zone label{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.Contact-Zone label img{
+    width: 20px;
+    height: 20px;
+}
+
+.Contact-Zone span img{
+    width: 20px;
+    height: 20px;
+}
+
+.Info{
+    display: flex;
+    padding: 10px;
+    background-color: var(--Main-Color);
+    width: 344px;
+    margin: 10px 20px;
+    font-size: 14px;
+    height: 42px;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.Info img{
+    width: 20px;
+}
+
+.Buy-Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 384px;
+    height: 200px;
+    color: #7D7D7D;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.Footer{
+    width: 100%;
+    height: 121px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 20px 0;
+    box-sizing: border-box;
+}
+
+.Total{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 344px;
+    font-size: 14px;
+    color: #231f20;
+    font-weight: bold;
+}
+
+.Check{
+    width: 344px;
+    height: 40px;
+    color: var(--Interaction-Background);
+    background-color: var(--color-btn-primary);
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
+
+.Vent p{
+    font-size: 14px;
+    color: #3da4ea;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+    transition: transform 0.1s ease-in-out;
+}
+
+.Vent p:hover{
+    text-decoration: underline;
+    transform: scaleX(1.06)
+}
+
+
